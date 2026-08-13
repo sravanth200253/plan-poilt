@@ -16,15 +16,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#F7F1E7] px-6 py-12 dark:bg-[#171310]">
-      <Link href="/" className="mb-6 flex items-center gap-2">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#F3D8BE] via-[#E3A876] to-[#4A3728] px-6 py-12">
+      <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/25 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -right-16 h-96 w-96 rounded-full bg-[#2B231A]/40 blur-3xl" />
+
+      <Link href="/" className="relative z-10 mb-6 flex items-center gap-2">
         <img src="/logo1.png" alt="PlanPilot logo" className="h-9 w-9 object-contain" />
-        <span className="text-lg font-bold text-[#4A3728] dark:text-[#F0EBE3]">
+        <span className="text-lg font-bold text-white drop-shadow-sm">
           Plan Pilot
         </span>
       </Link>
 
-      <div className="w-full max-w-[350px] rounded-[40px] border-[5px] border-white bg-gradient-to-b from-white to-[#FBF6EC] px-[35px] py-[25px] shadow-[0_30px_30px_-20px_rgba(200,135,106,0.45)] dark:border-white/10 dark:from-[#221C15] dark:to-[#1B1610]">
+      <div className="relative z-10 w-full max-w-[350px] rounded-[40px] border border-white/40 bg-white/25 px-[35px] py-[25px] shadow-[0_30px_60px_-20px_rgba(26,20,15,0.5)] backdrop-blur-2xl">
         <h1 className="bg-gradient-to-r from-[#C8876A] via-[#B99A73] to-[#4A3728] bg-clip-text text-center text-3xl font-black text-transparent">
           Login
         </h1>
@@ -33,12 +36,12 @@ export default function LoginPage() {
           <input
             type="email"
             placeholder="Email"
-            className="mt-[15px] w-full rounded-[20px] border-x-2 border-transparent bg-white px-5 py-[15px] text-sm text-[#4A3728] shadow-[0_10px_10px_-5px_#F3E6D6] placeholder:text-[#AAAAAA] focus:outline-none focus:border-x-2 focus:border-[#C8876A] dark:bg-white/5 dark:text-[#F0EBE3]"
+            className="mt-[15px] w-full rounded-[20px] border-x-2 border-transparent bg-white/60 px-5 py-[15px] text-sm text-[#4A3728] shadow-[0_10px_10px_-5px_rgba(200,135,106,0.2)] backdrop-blur-md placeholder:text-[#8B6F47]/60 focus:border-x-2 focus:border-[#C8876A] focus:outline-none"
           />
           <input
             type="password"
             placeholder="Password"
-            className="mt-[15px] w-full rounded-[20px] border-x-2 border-transparent bg-white px-5 py-[15px] text-sm text-[#4A3728] shadow-[0_10px_10px_-5px_#F3E6D6] placeholder:text-[#AAAAAA] focus:outline-none focus:border-x-2 focus:border-[#C8876A] dark:bg-white/5 dark:text-[#F0EBE3]"
+            className="mt-[15px] w-full rounded-[20px] border-x-2 border-transparent bg-white/60 px-5 py-[15px] text-sm text-[#4A3728] shadow-[0_10px_10px_-5px_rgba(200,135,106,0.2)] backdrop-blur-md placeholder:text-[#8B6F47]/60 focus:border-x-2 focus:border-[#C8876A] focus:outline-none"
           />
 
           <span className="mt-[10px] ml-[10px] block">

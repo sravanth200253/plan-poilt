@@ -3,31 +3,49 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   IconLayoutDashboard,
+  IconSparkles,
   IconCalendar,
   IconTarget,
+  IconRepeat,
+  IconTemplate,
+  IconGauge,
+  IconChartBar,
+  IconBell,
   IconSettings,
   IconLogout,
   IconArrowLeft,
+  IconLifebuoy,
 } from "@tabler/icons-react";
+import { LocalClock } from "@/components/dashboard/local-clock";
 
 const NAV_ITEMS = [
   { label: "Overview", href: "/dashboard", icon: IconLayoutDashboard },
-  { label: "Schedule", href: "#", icon: IconCalendar },
-  { label: "Goals", href: "#", icon: IconTarget },
-  { label: "Settings", href: "#", icon: IconSettings },
+  { label: "Make Your Plan", href: "/dashboard/plan", icon: IconSparkles },
+  { label: "Schedule", href: "/dashboard/schedule", icon: IconCalendar },
+  { label: "Plan Tracker", href: "/dashboard/tracker", icon: IconGauge },
+  { label: "Goals", href: "/dashboard/goals", icon: IconTarget },
+  { label: "Habits", href: "/dashboard/habits", icon: IconRepeat },
+  { label: "Templates", href: "/dashboard/templates", icon: IconTemplate },
+  { label: "Analytics", href: "/dashboard/analytics", icon: IconChartBar },
+  { label: "Notifications", href: "/dashboard/notifications", icon: IconBell },
+  { label: "Settings", href: "/dashboard/settings", icon: IconSettings },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-screen w-64 shrink-0 flex-col bg-gradient-to-b from-[#2B231A] to-[#1A140F] px-5 py-6 text-white">
+    <aside className="relative z-10 flex h-screen w-64 shrink-0 flex-col bg-gradient-to-b from-[#2B231A] to-[#1A140F] px-5 py-6 text-white">
       <Link href="/" className="flex items-center gap-2 px-2">
         <img src="/logo1.png" alt="PlanPilot logo" className="h-8 w-8 object-contain" />
         <span className="text-lg font-bold">Plan Pilot</span>
       </Link>
 
-      <nav className="mt-10 flex flex-1 flex-col gap-1">
+      <div className="mt-6">
+        <LocalClock />
+      </div>
+
+      <nav className="mt-6 flex flex-1 flex-col gap-1">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -48,6 +66,14 @@ export function Sidebar() {
       </nav>
 
       <div className="mt-auto flex flex-col gap-2">
+        <Link
+          href="/#faq"
+          className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-[#D8CBBB] transition hover:bg-white/5 hover:text-white"
+        >
+          <IconLifebuoy size={16} />
+          Help &amp; Support
+        </Link>
+
         <Link
           href="/"
           className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-[#D8CBBB] transition hover:bg-white/5 hover:text-white"
